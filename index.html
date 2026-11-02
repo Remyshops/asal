@@ -1565,6 +1565,18 @@
   .end-cta p{ color:var(--muted); font-size:13px; margin-bottom:16px; }
   .end-cta .btn-cta{ display:inline-flex; }
 
+
+  /* ---------- compact horizontal video strip + quick nav ---------- */
+  .vstrip-head{display:flex; align-items:center; justify-content:space-between; margin:10px 2px 6px; font-size:13.5px; font-weight:800; color:var(--text);}
+  .vstrip-head small{font-weight:600; color:var(--muted); font-size:11.5px;}
+  .video-list.vstrip{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:0 0 10px; padding:0;}
+  .video-list.vstrip .video-item{flex-direction:row; align-items:center; justify-content:flex-start; gap:8px; min-height:56px; padding:8px 10px; font-size:12px; line-height:1.5; margin:0;}
+  .video-list.vstrip .video-item .play{width:28px; height:28px; flex:none; font-size:11px;}
+  .video-list.vstrip .video-item .vt{display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; text-align:right;}
+  .quick-nav{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:4px 0 14px;}
+  .quick-nav a{display:flex; align-items:center; justify-content:center; text-align:center; padding:10px 6px; border-radius:12px; font-size:12.5px; font-weight:800; text-decoration:none; color:var(--drop-2); background:var(--surface); border:1px solid var(--line);}
+  .quick-nav a.hot{color:#fff; border-color:transparent; background:linear-gradient(135deg, var(--green), var(--green-2));}
+
   /* ---------- floating WhatsApp button ---------- */
   .floating-wa{
     position:fixed;
@@ -1704,8 +1716,33 @@
     <div class="tv-wrap"><iframe src="https://www.aparat.com/video/video/embed/videohash/ehuj2ge/vt/frame" title="عسل‌ها از چه گلی تولید می‌شوند" loading="lazy" allow="autoplay; fullscreen" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div>
   </div>
 
+  <!-- ================= VIDEO STRIP (under top video) ================= -->
+  <div class="vstrip-head"><span>🎬 ویدیوهای بیشتر</span><small>روی هر ویدیو بزنید</small></div>
+  <div class="video-list vstrip" id="videoList">
+    <button type="button" class="video-item" data-url="https://aparat.com/v/yjv398c" data-label="توضیحات زنبوردار نمونه استان اردبیل در شبکه ۲"><span class="play">▶</span><span class="vt">توضیحات زنبوردار نمونه استان اردبیل در شبکه ۲</span></button>
+    <button type="button" class="video-item" data-url="https://aparat.com/v/gtb5kgc" data-label="نحوه جمع‌آوری گل"><span class="play">▶</span><span class="vt">نحوه جمع‌آوری گل</span></button>
+    <button type="button" class="video-item" data-url="https://aparat.com/v/bup8e52" data-label="کلیپ از افتخارات زنبوردار نمونه"><span class="play">▶</span><span class="vt">کلیپ از افتخارات زنبوردار نمونه</span></button>
+    <button type="button" class="video-item" data-url="https://aparat.com/v/cyg5coa" data-label="نحوه برداشت ژل رویال"><span class="play">▶</span><span class="vt">نحوه برداشت ژل رویال</span></button>
+    <button type="button" class="video-item" data-url="https://aparat.com/v/ufy99gk" data-label="فرق عسل‌درمانی با دیابتی"><span class="play">▶</span><span class="vt">فرق عسل‌درمانی با دیابتی</span></button>
+    <button type="button" class="video-item" data-url="https://aparat.com/v/dqr0g7y" data-label="نحوه عسل‌گیری"><span class="play">▶</span><span class="vt">نحوه عسل‌گیری</span></button>
+  </div>
+
+  <div class="quick-nav">
+    <a href="#bestSellersSection" class="hot">💰 قیمت‌ها</a>
+    <a href="#pricesSection">📦 قیمت عمده</a>
+    <a href="#shopExtras" id="qnTests">🔬 آزمایش‌ها</a>
+  </div>
+
   <!-- ================= SHOP MAIN: پرفروش‌ها + محصولات ================= -->
   <div class="shop-part" id="shopMain">
+  <!-- ================= TRUST BOX ================= -->
+  <div class="trust-box">
+    <div class="trust-item"><span class="check">✔</span> عسل ۸۵٪ طبیعی</div>
+    <div class="trust-item"><span class="check">✔</span> قیمت عمده</div>
+    <div class="trust-item"><span class="check">✔</span> سفارش مستقیم از ایتا</div>
+    <div class="trust-item"><span class="check">✔</span> هزینه ارسال بر عهده خریدار</div>
+  </div>
+
   <!-- ================= BEST SELLERS ================= -->
   <div class="section-title" id="bestSellersSection"><span class="drop"></span><h2>⭐ پرفروش‌ترین‌ها</h2><span class="line"></span></div>
   <div class="section-sub">محبوب‌ترین محصولات — روی هر محصول بزنید و سفارش بدهید</div>
@@ -1780,13 +1817,7 @@
 
   <!-- ================= EXTRAS: اعتماد و مدارک (جمع‌شونده) ================= -->
   <div class="shop-part" id="shopExtras">
-  <!-- ================= TRUST BOX ================= -->
-  <div class="trust-box">
-    <div class="trust-item"><span class="check">✔</span> عسل ۸۵٪ طبیعی</div>
-    <div class="trust-item"><span class="check">✔</span> قیمت عمده</div>
-    <div class="trust-item"><span class="check">✔</span> سفارش مستقیم از ایتا</div>
-    <div class="trust-item"><span class="check">✔</span> هزینه ارسال بر عهده خریدار</div>
-  </div>
+
 
 
     <details class="more-box">
@@ -1809,18 +1840,7 @@
   <div class="section-sub">برای بزرگ‌نمایی روی هر عکس بزنید</div>
   <div class="awards-grid" id="photoGrid"></div>
 
-  <!-- ================= VIDEOS ================= -->
-  <div class="section-title" id="videosSection"><span class="drop"></span><h2>🎬 ویدیوهای زنبورداری و عسل</h2><span class="line"></span></div>
-  <div class="section-sub">برای دیدن هر ویدیو روی آن بزنید</div>
-  <div class="video-list" id="videoList">
-    <button type="button" class="video-item" data-url="https://aparat.com/v/ehuj2ge" data-label="عسل‌ها از چه گلی تولید می‌شوند"><span class="play">▶</span><span>عسل‌ها از چه گلی تولید می‌شوند</span></button>
-    <button type="button" class="video-item" data-url="https://aparat.com/v/yjv398c" data-label="توضیحات زنبوردار نمونه استان اردبیل در شبکه ۲"><span class="play">▶</span><span>توضیحات زنبوردار نمونه استان اردبیل در شبکه ۲</span></button>
-    <button type="button" class="video-item" data-url="https://aparat.com/v/gtb5kgc" data-label="نحوه جمع‌آوری گل"><span class="play">▶</span><span>نحوه جمع‌آوری گل</span></button>
-    <button type="button" class="video-item" data-url="https://aparat.com/v/bup8e52" data-label="کلیپ از افتخارات زنبوردار نمونه"><span class="play">▶</span><span>کلیپ از افتخارات زنبوردار نمونه</span></button>
-    <button type="button" class="video-item" data-url="https://aparat.com/v/cyg5coa" data-label="نحوه برداشت ژل رویال"><span class="play">▶</span><span>نحوه برداشت ژل رویال</span></button>
-    <button type="button" class="video-item" data-url="https://aparat.com/v/ufy99gk" data-label="فرق عسل‌درمانی با دیابتی"><span class="play">▶</span><span>فرق عسل‌درمانی با دیابتی</span></button>
-    <button type="button" class="video-item" data-url="https://aparat.com/v/dqr0g7y" data-label="نحوه عسل‌گیری"><span class="play">▶</span><span>نحوه عسل‌گیری</span></button>
-    </div>
+
 
     </details>
   </div>
@@ -2025,7 +2045,7 @@
       <button class="close-btn" id="closeModal">×</button>
     </div>
     <div id="modalThumbWrap"></div>
-    <div id="videoList"></div>
+    <div id="modalVideoList"></div>
     <a href="https://basalam.com/editor" target="_blank" rel="noopener" class="order-here" id="orderLink">ثبت سفارش در ایتا</a>
     <div class="share-row">
       <button class="share-btn" id="shareBtn" type="button">
@@ -2159,7 +2179,7 @@ const noResult = document.getElementById('noResult');
 const overlay = document.getElementById('overlay');
 const modalTitle = document.getElementById('modalTitle');
 const modalThumbWrap = document.getElementById('modalThumbWrap');
-const videoList = document.getElementById('videoList');
+const videoList = document.getElementById('modalVideoList');
 const orderLink = document.getElementById('orderLink');
 const shareBtn = document.getElementById('shareBtn');
 const shareBtnLabel = document.getElementById('shareBtnLabel');
@@ -4296,6 +4316,12 @@ shareBtn.addEventListener('click', async ()=>{
 document.getElementById('videoList').addEventListener('click',function(e){
   var b=e.target.closest('.video-item'); if(!b) return;
   openVideo(b.getAttribute('data-url'), b.getAttribute('data-label'));
+});
+
+document.getElementById('qnTests').addEventListener('click',function(e){
+  e.preventDefault();
+  var d=document.querySelector('details.more-box'); if(d) d.open=true;
+  var t=document.getElementById('labSection'); if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
 });
 </script>
 
